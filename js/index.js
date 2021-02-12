@@ -33,24 +33,32 @@ navHeadScrollEvent();
 
 // CONTENT GROW BORDER ON CLICK
 let content = document.querySelectorAll('.content-section');
-console.log(content);
-// PUT A FOREACH IN HERE
 content.forEach(contentSection => {
     contentSection.addEventListener('click', event => {
         switch (contentSection.style.border) {
             case 'thin solid red':
                 contentSection.style.border = 'medium solid lime';
-                console.log('medium')
                 break;
             case 'medium solid lime':
                 contentSection.style.border = 'thick solid black';
-                console.log('thick')
                 break;
             default:
                 contentSection.style.border = 'thin solid red';
-                console.log(contentSection.style.border)
                 break;
         }
     })
 })
-    
+
+// CONTAINER <P> MOUSELEAVE TOGGLE
+let destinationP = document.querySelectorAll('div.destination > p');
+destinationP.forEach(tag => {
+    tag.addEventListener('mouseleave', event => {
+        tag.style.color = 'white';
+    });
+})
+
+// DOUBLECLICK H1
+let h1text = document.querySelector('h1');
+h1text.addEventListener('dblclick', event => {
+    h1text.textContent = 'Disappearing Bus';
+});
