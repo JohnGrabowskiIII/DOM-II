@@ -62,3 +62,16 @@ let h1text = document.querySelector('h1');
 h1text.addEventListener('dblclick', event => {
     h1text.textContent = 'Disappearing Bus';
 });
+
+// LOAD EVENT CHANGE BODY BACKGROUND COLOR
+window.addEventListener('resize', event => {
+    console.log('logging');
+    body.style.backgroundColor = 'purple';
+});
+
+// DESTINATION <P> COPY
+let yourDestP = document.querySelector('.content-destination > p');
+yourDestP.addEventListener('copy', event => {
+    alert('you copied the secret text... good job!');
+})
+
