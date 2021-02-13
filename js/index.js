@@ -84,3 +84,10 @@ body.addEventListener('keyup', event => {
     i++;
    }  
 });
+
+// PREVENTDEFAULT ADDED TO NAVIGATION ITEMS
+let navButtons = document.querySelectorAll('nav.nav > a');
+console.log(navButtons);
+navButtons.forEach(btn => {
+    btn.addEventListener('click', e => e.preventDefault());
+});
