@@ -75,9 +75,12 @@ yourDestP.addEventListener('copy', event => {
     alert('you copied the secret text... good job!');
 })
 
-// BUTTON COLOR CHANGE ON KEYUP
+// BUTTON REMOVE ON KEYUP
 let buttons = document.querySelectorAll('.btn');
+let i = 0;
 body.addEventListener('keyup', event => {
-    console.log('remove button')
-    // buttons.remove();
+   if (i < buttons.length) {
+    buttons[i].remove();
+    i++;
+   }  
 });
