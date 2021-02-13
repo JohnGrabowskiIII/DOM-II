@@ -1,7 +1,9 @@
 // KEYDOWN ALERT
 let body = document.body;
 body.addEventListener('keydown', event => {
-    alert('You pressed a key');
+    if (event.key === 'ArrowDown') {
+        alert('You pressed the down key');
+    } 
 });
 
 // MOUSEOVER H2 COLOR RED
@@ -17,7 +19,6 @@ let allImgs = document.getElementsByTagName('img');
 for (let i = 0; i < allImgs.length; i++) {
     allImgs[i].addEventListener('click', event => {
         let currentHeight = event.target.clientHeight;
-        let currentWidth = event.target.clientWidth
         event.target.style.height = ((currentHeight - 10) + "px");
         event.stopPropagation();
     })
@@ -65,7 +66,6 @@ h1text.addEventListener('dblclick', event => {
 
 // LOAD EVENT CHANGE BODY BACKGROUND COLOR
 window.addEventListener('resize', event => {
-    console.log('logging');
     body.style.backgroundColor = 'purple';
 });
 
@@ -75,3 +75,9 @@ yourDestP.addEventListener('copy', event => {
     alert('you copied the secret text... good job!');
 })
 
+// BUTTON COLOR CHANGE ON KEYUP
+let buttons = document.querySelectorAll('.btn');
+body.addEventListener('keyup', event => {
+    console.log('remove button')
+    // buttons.remove();
+});
